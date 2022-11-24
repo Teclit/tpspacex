@@ -24,7 +24,7 @@ export class CapsulesComponent implements OnInit {
   public getMethod(){
     this.http.get('https://api.spacexdata.com/v3/capsules').subscribe(
       (data)=> {
-        console.log(data);
+       // console.log(data);
         this.getJsonValue = data;
       }
     );

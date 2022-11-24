@@ -10,9 +10,9 @@ export class LaunchesComponent  implements OnInit{
   
   title = 'SpaceX Launches';
   LAUNCHES:any;
-  pages: number = 1;
+  page: number = 1;
   count: number = 0;
-  launcheSize: number = 10
+  launcheSize: number = 18
   launcheSizes: any =[4,8,12,16]
   constructor(private launchesService: LaunchesService){}
 
@@ -20,11 +20,28 @@ export class LaunchesComponent  implements OnInit{
    this.launchList();
   }
 
-   public launchList(){
+    launchList(){
       this.launchesService.getAllLaunches().subscribe((response)=>{
         this.LAUNCHES =response;
-        console.log(this.LAUNCHES);
+        //Test pagination
+        this.launcheSize = Object.keys(this.LAUNCHES).length/2;
+       console.log(this.LAUNCHES);
       })
-   }
+    }
+
+    onBoardDataChange(event: any):void{
+      this.page = event;
+      this.launchList();
+
+    }
+
+    onBoardSizeChange(event: any):void{
+      this.launcheSize =event.target.value;
+      this.page = 1;
+      this.launchList();
+    }
+
+
+
 
 }

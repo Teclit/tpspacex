@@ -25,6 +25,5 @@ export class LaunchesService {
 
    getAllLaunches():Observable<any>{
       return this.http.get(endpoint);
-  
    }
 }
