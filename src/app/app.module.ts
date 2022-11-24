@@ -9,16 +9,16 @@ import { LaunchesComponent } from './launches/launches.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        LaunchesComponent,
-        CapsulesComponent,
-
+      AppComponent,
+      LaunchesComponent,
+      CapsulesComponent
+    ],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule
     ],
     providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule
-    ]
-})
-export class AppModule { }
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }

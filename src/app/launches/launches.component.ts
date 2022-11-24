@@ -23,17 +23,9 @@ export class LaunchesComponent  implements OnInit{
    public getMethod(){
      //GET All Launches = https://api.spacexdata.com/v3/launches
      //GET One Launche ='https://api.spacexdata.com/v3/launches/67'
-     this.http.get('https://api.spacexdata.com/v3/launches/98').subscribe((data)=>{
+     this.http.get('https://api.spacexdata.com/v3/launches/67').subscribe((data)=>{
        console.log(data);
        this.getJsonValue = data;
-
-       for(let key in this.getJsonValue) {
-        let child = this.getJsonValue[key];
-        // Your Code
-        console.log(child);
-        }
-
-    
      });
    }
 
