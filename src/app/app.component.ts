@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  title= "TP | SpaceX Launches"
+  launches_title ="| SpaceX Launches";
+  capsules_title = "| SpaceX Capsules"
   
 }
