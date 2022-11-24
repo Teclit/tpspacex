@@ -12,9 +12,7 @@ export class LaunchesComponent  implements OnInit{
    getJsonValue: any;
    postJsonValue: any;
 
-   constructor(private http: HttpClient){
-     
-   }
+   constructor(private http: HttpClient){}
 
    ngOnInit(): void {
      this.getMethod();
