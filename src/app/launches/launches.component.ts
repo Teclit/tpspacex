@@ -1,36 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from'@angular/common/http';
-
+import {LaunchesService} from '../launches.service';
 @Component({
   selector: 'app-launches',
   templateUrl: './launches.component.html',
-  styleUrls: ['./launches.component.css']
+  styleUrls: ['./launches.component.css'],
+  providers:  [LaunchesService]
 })
 export class LaunchesComponent  implements OnInit{
-  title = 'BenTek TP';
+  
+  title = 'SpaceX Launches';
+  LAUNCHES:any;
+  pages: number = 1;
+  count: number = 0;
+  launcheSize: number = 10
+  launcheSizes: any =[4,8,12,16]
+  constructor(private launchesService: LaunchesService){}
 
-   getJsonValue: any;
-   postJsonValue: any;
+  ngOnInit(): void {
+   this.launchList();
+  }
 
-   constructor(private http: HttpClient){}
-
-   ngOnInit(): void {
-     this.getMethod();
-   }
-
-
-
-   public getMethod(){
-     //GET All Launches = https://api.spacexdata.com/v3/launches
-     //GET One Launche ='https://api.spacexdata.com/v3/launches/67'
-     this.http.get('https://api.spacexdata.com/v3/launches').subscribe((data)=>{
-       console.log(data);
-       this.getJsonValue = data;
-      
-        for (let obj of this.getJsonValue) {
-          console.log(obj);
-        }
-     });
+   public launchList(){
+      this.launchesService.getAllLaunches().subscribe((response)=>{
+        this.LAUNCHES =response;
+        console.log(this.LAUNCHES);
+      })
    }
 
 }

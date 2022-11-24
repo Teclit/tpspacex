@@ -1,6 +1,6 @@
 <div class="d-flex flex-wrap justify-content-evenly mb-3 text-center text-white">
-  <a *ngFor="let luncheObject of getJsonValue">
-      <div class="card  text-dark mb-3 " style="width:20rem;" > 
+  <a *ngFor="let luncheObject of LAUNCHES">
+      <div class="card  text-dark p-3 " style="width:20rem;" > 
             <img src="{{luncheObject.links.mission_patch_small}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h1 class="card-title">{{luncheObject.mission_name}}</h1>
