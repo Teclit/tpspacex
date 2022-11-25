@@ -1,12 +1,8 @@
-<!--
-<h1> Get Methode </h1>
-<p>{{getJsonValue | json}}</p>
--->
+
 <div class="d-flex flex-wrap  mb-3 text-center text-white" style="height:20rem !important;">
   <div *ngFor="let obj of getJsonValue ">
     <div class="card  text-dark p-3 " style="width:20rem;">
       <img src="" class="card-img-top" alt="">
-      <!--<button class="btn btn-success" (click)="addRecipe()" (keyup.d)="removeRecipe()">New Recipe</button> -->
       <div class="card-body">
         <h5 class="card-title">ID: {{obj.capsule_serial}}</h5>
         <h1 class="card-title">{{obj.capsule_id}}</h1>

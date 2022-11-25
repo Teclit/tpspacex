@@ -1,0 +1,26 @@
+<div class="d-flex flex-wrap justify-content-evenly mb-3 text-center text-white">
+    <div *ngFor="let luncheObject of LAUNCHES ">
+      <div class="card  text-dark p-3 " style="width:20rem;" > 
+            <img src="{{luncheObject.links.mission_patch_small}}" class="card-img-top" alt="{{luncheObject.mission_name}}">
+            <div class="card-body">
+              <h1 class="card-title">{{luncheObject.mission_name}}</h1>
+              <h5 class="card-title">Year: {{luncheObject.launch_year}}</h5>
+              <p class="card-text text-start">{{luncheObject.details}}</p>
+              <h3 href="#" class="btn btn-dark">More Related infos</h3>
+              <div class="list-group">
+                <a href="{{luncheObject.links.reddit_launch}}" target="_blank" class="list-group-item list-group-item-action">Reddit article 1</a>
+                <a href="{{luncheObject.links.reddit_media}}" target="_blank" class="list-group-item list-group-item-action">Reddit article 2</a>
+                <a href="{{luncheObject.links.presskit}}" target="_blank" class="list-group-item list-group-item-action">Presskit</a>
+                <a href="{{luncheObject.links.article_link}}" target="_blank" class="list-group-item list-group-item-action">Article_link</a>
+                <a href="{{luncheObject.links.wikipedia}}" target="_blank" class="list-group-item list-group-item-action">Wikipedia</a>
+                <a href="{{luncheObject.links.video_link}}" target="_blank" class="list-group-item list-group-item-action">Youtube</a>
+              </div>
+            </div>
+      </div> 
+  </div>
+</div>
+
+
+
+
+
