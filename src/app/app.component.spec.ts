@@ -1,35 +1,56 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LaunchesComponent } from './launches/launches.component';
+
 
 describe('AppComponent', () => {
+
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        LaunchesComponent
       ],
+      
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgxPaginationModule,
+        HttpClientModule
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should create the app', () => {
+  it('should create the app-AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tpspacex'`, () => {
+  it(`should have as title '| SpaceX Launches'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tpspacex');
+    expect(app.launches_title).toEqual('| SpaceX Launches');
   });
 
-  it('should render title', () => {
+  it(`should have as title '| SpaceX Capsules'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tpspacex app is running!');
+    const app = fixture.componentInstance;
+    expect(app.capsules_title).toEqual('| SpaceX Capsules');
   });
+
+
 });
