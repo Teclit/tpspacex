@@ -24,6 +24,8 @@ export class CapsulesComponent implements OnInit {
     this.getMethod();
   }
 
+  
+
  getMethod(){
     this.capsulesService.getAllCapsules().subscribe(
       (data)=> {
