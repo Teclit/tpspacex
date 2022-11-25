@@ -15,6 +15,7 @@ import { CapsulesService } from '../capsules.service';
 export class CapsulesComponent implements OnInit {
 
   public getJsonValue: any;
+  myimage: string= "../assets/images/Captura.png";
 
   constructor(private capsulesService: CapsulesService){
 
@@ -24,7 +25,7 @@ export class CapsulesComponent implements OnInit {
     this.getMethod();
   }
 
-  
+
 
  getMethod(){
     this.capsulesService.getAllCapsules().subscribe(
