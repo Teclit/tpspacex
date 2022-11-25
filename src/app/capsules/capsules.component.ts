@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CapsulesService } from '../capsules.service';
 
@@ -16,15 +15,11 @@ export class CapsulesComponent implements OnInit {
 
   public getJsonValue: any;
 
-  constructor(private capsulesService: CapsulesService){
-
-  }
+  constructor(private capsulesService: CapsulesService){}
 
   ngOnInit(): void{
     this.getMethod();
   }
-
-  
 
  getMethod(){
     this.capsulesService.getAllCapsules().subscribe(
