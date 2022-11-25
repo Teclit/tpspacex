@@ -25,7 +25,7 @@ export class LaunchesComponent  implements OnInit{
         this.LAUNCHES =response;
         //Test pagination
         this.launcheSize = Object.keys(this.LAUNCHES).length;
-       console.log(this.LAUNCHES);
+         console.log(this.LAUNCHES);
       })
     }
 
