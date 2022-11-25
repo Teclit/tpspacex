@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CapsulesService } from '../capsules.service';
+
 
 
 @Component({
   selector: 'app-capsules',
   templateUrl: './capsules.component.html',
-  styleUrls: ['./capsules.component.css']
+  styleUrls: ['./capsules.component.css'],
+  providers: [CapsulesService]
 })
 
 
@@ -13,7 +16,7 @@ export class CapsulesComponent implements OnInit {
 
   public getJsonValue: any;
 
-  constructor(private http: HttpClient){
+  constructor(private capsulesService: CapsulesService){
 
   }
 
@@ -21,8 +24,8 @@ export class CapsulesComponent implements OnInit {
     this.getMethod();
   }
 
-  public getMethod(){
-    this.http.get('https://api.spacexdata.com/v3/capsules').subscribe(
+ getMethod(){
+    this.capsulesService.getAllCapsules().subscribe(
       (data)=> {
         console.log(data);
         this.getJsonValue = data;

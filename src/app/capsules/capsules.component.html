@@ -2,8 +2,9 @@
 <h1> Get Methode </h1>
 <p>{{getJsonValue | json}}</p>
 -->
+<div class="d-flex flex-wrap justify-content-evenly mb-3 text-center text-white">
 <div *ngFor="let obj of getJsonValue ">
-  <div class="card  text-dark p-3 " style="width: 28rem;" >
+  <div class="card  text-dark p-3 " style="width:20rem;" >
     <div class="card-body">
       <h5 class="card-title">ID: {{obj.capsule_serial}}</h5>
       <h1 class="card-title">{{obj.capsule_id}}</h1>
@@ -17,4 +18,5 @@
       <h2 class="card-text">{{obj.details}}</h2>
       <h2 class="card-text">{{obj.reuse_count}}</h2>
     </div>
+</div>
 </div>
