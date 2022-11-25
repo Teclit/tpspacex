@@ -10,10 +10,7 @@ export class LaunchesComponent  implements OnInit{
   
   title = 'SpaceX Launches';
   LAUNCHES:any;
-  page: number = 1;
-  count: number = 0;
-  launcheSize: number = 18
-  launcheSizes: any =[4,8,12,16]
+  launchesSize: number = 18
   constructor(private launchesService: LaunchesService){}
 
   ngOnInit(): void {
@@ -24,22 +21,11 @@ export class LaunchesComponent  implements OnInit{
       this.launchesService.getAllLaunches().subscribe((response)=>{
         this.LAUNCHES =response;
         //Test pagination
-        this.launcheSize = Object.keys(this.LAUNCHES).length;
+        this.launchesSize = Object.keys(this.LAUNCHES).length;
          console.log(this.LAUNCHES);
       })
     }
 
-    onBoardDataChange(event: any):void{
-      this.page = event;
-      this.launchList();
-
-    }
-
-    onBoardSizeChange(event: any):void{
-      this.launcheSize =event.target.value;
-      this.page = 1;
-      this.launchList();
-    }
 
 
 

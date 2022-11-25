@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +22,7 @@ import { LaunchesComponent } from './launches/launches.component';
       HttpClientModule
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
   })
   export class AppModule { }
