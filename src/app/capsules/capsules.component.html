@@ -1,19 +1,19 @@
 
 <div class="d-flex flex-wrap  mb-3 text-center text-white" style="height:20rem !important;">
-  <div *ngFor="let obj of getJsonValue ">
-    <div class="card  text-dark p-3 " style="width:20rem;">
-      <img src="" class="card-img-top" alt="">
+  <div *ngFor="let dataCapsule of getJsonValue ">
+    <div class="card  text-dark p-3  " style="width:20rem;">
+      <img [src]="myimage" class="card-img-top" alt="">
       <div class="card-body">
-        <h5 class="card-title">ID: {{obj.capsule_serial}}</h5>
-        <h1 class="card-title">{{obj.capsule_id}}</h1>
-        <p class="card-text text-center">{{obj.details}}</p>
-        <h2 class="card-text">{{obj.status}}</h2>
-        <h2 class="card-text">{{obj.original_launch}}</h2>
-        <h2 class="card-text">{{obj.original_launch_unixs}}</h2>
-        <h2 class="card-text">{{obj.landings}}</h2>
-        <h2 class="card-text">{{obj.type}}</h2>
-        <h2 class="card-text">{{obj.details}}</h2>
-        <h2 class="card-text">{{obj.reuse_count}}</h2>
+        <h1 class="card-title">ID: {{dataCapsule.capsule_serial}}</h1>
+        <h2 class="card-title">{{dataCapsule.capsule_id}}</h2>
+        <h3 class="card-text text-center">{{dataCapsule.details}}</h3>
+        <h4 class="card-text">{{dataCapsule.status}}</h4>
+        <h4 class="card-text">{{dataCapsule.original_launch}}</h4>
+        <h4 class="card-text">{{dataCapsule.original_launch_unixs}}</h4>
+        <h4 class="card-text">{{dataCapsule.landings}}</h4>
+        <h4 class="card-text">{{dataCapsule.type}}</h4>
+        <h4 class="card-text">{{dataCapsule.details}}</h4>
+        <h4 class="card-text">{{dataCapsule.reuse_count}}</h4>
       </div>
     </div>
   </div>

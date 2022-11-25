@@ -14,12 +14,15 @@ import { CapsulesService } from '../capsules.service';
 export class CapsulesComponent implements OnInit {
 
   public getJsonValue: any;
+  myimage: string= "../assets/images/Captura.png";
 
   constructor(private capsulesService: CapsulesService){}
 
   ngOnInit(): void{
     this.getMethod();
   }
+
+
 
  getMethod(){
     this.capsulesService.getAllCapsules().subscribe(
