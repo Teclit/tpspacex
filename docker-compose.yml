@@ -1,0 +1,17 @@
+version: "3.6"
+services:
+  angular-service:
+    container_name: angularcontainer
+    build: ./angular
+    image: "node:latest"
+    working_dir: /home/node/app
+    command:
+      - /bin/sh
+      - "-c"
+      - "npm install && npm start"
+    ports:
+      - "4300:4300"
+    volumes:
+      - ".:/home/node/app"
+
+
